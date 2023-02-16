@@ -111,7 +111,7 @@ export default class Analyzer {
         }
 
         const distance = wolf.position.distanceTo(otherWolf.position);
-        if (distance <= config.bondDays && !wolf.hasBondWith(otherWolf)) {
+        if (distance <= config.bondRangeMeters && !wolf.hasBondWith(otherWolf)) {
           wolf.addBond(otherWolf, lines[0].date);
         }
       }
