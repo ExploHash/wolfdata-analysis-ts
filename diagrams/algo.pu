@@ -1,0 +1,24 @@
+@startuml
+start
+:Read all gps entries
+of current day;
+:Summarize per wolf;
+repeat :Loop through all entries;
+  if (entry is of known wolf) then (yes)
+    :Update wolfs location;
+  else (no)
+    :Create new wolf;
+  endif
+repeat while (all entries read)
+
+repeat :Loop through all wolfs;
+  repeat :Loop through all bonds;
+    : Check per status what to do;
+  repeat while (all bonds read)
+  repeat :Loop through all wolves;
+    if (wolf is in range) then (yes)
+      :Create pending bond;
+    endif
+  repeat while (all wolfs read)
+repeat while (all wolfs read)
+@enduml

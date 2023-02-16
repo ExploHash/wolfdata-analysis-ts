@@ -1,0 +1,27 @@
+@startuml
+class Wolf {
+  Bonds[] bonds
+  String lat
+  String lon
+  String name
+}
+
+Wolf "many" -- "many" Bond
+
+class Bond{
+  Wolf[] wolves 
+  BondStatus status
+  DateTime pendingSince
+  DateTime activeSince
+  DateTime breakingSince
+}
+
+enum BondStatus {
+  PENDING
+  ACTIVE
+  BREAKING
+  BROKEN
+  REBONDED
+}
+
+@enduml
